@@ -55,7 +55,7 @@ Ensure all directory structures match the given paths for the project to functio
 - Your PC **MUST** have a GPU with at least 32GB Total Memory. (DOES NOT INCLUDE PC'S RAM)
 - Your PC **MUST** be CUDA-Capable - https://developer.nvidia.com/cuda-zone (generally any Nvidia GPU (RTX series) will suffice)
 - Your PC **MUST** have at least 64GB of free space.
-- Your PC **MUST** have either a Linux or Windows OS running (Unknown AMD/32bit support).
+- Your PC **MUST** have either a Linux or Windows OS running (Unknown ARM/32bit support).
 
 ### 3.2. Python
 Install Python 3.11 from [Pythons Offical Website](https://www.python.org/downloads/release/python-3119/) - Note the last binary installer was provided with `3.11.9`, advanced users can compile `*>=3.11.10 < 3.12` from provided source code.
