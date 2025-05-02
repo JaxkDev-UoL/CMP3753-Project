@@ -5,7 +5,7 @@ from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
 from torch.utils.tensorboard import SummaryWriter
 from torch.optim import AdamW
-from logging import LoggingCallback
+from logging_utils import LoggingCallback
 
 # Configuration
 ID = "9"
