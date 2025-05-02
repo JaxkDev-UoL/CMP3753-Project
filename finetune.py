@@ -120,18 +120,18 @@ def load_phase_model(phase: int):
                 std.repeat(num_special, 1)
             )
 
-        # Now move to GPU if available
-        model = model.to('cuda' if torch.cuda.is_available() else 'cpu')
     else:
         # Load checkpoints with device map
         prev_phase_dir = f"{BASE_OUTPUT_DIR}_phase{phase-1}"
         model = AutoModelForCausalLM.from_pretrained(
             prev_phase_dir,
             torch_dtype=torch.bfloat16,
-            device_map="auto",
-            low_cpu_mem_usage=True  # Required for device_map to work, otherwise false
+            device_map=None,
+            low_cpu_mem_usage=False  # Required for device_map to work, otherwise false
         )
         tokenizer = AutoTokenizer.from_pretrained(prev_phase_dir)
+
+    model = model.to('cuda' if torch.cuda.is_available() else 'cpu')
     
     return model, tokenizer
 
