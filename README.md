@@ -14,18 +14,41 @@ Models:
 - `Llama 3.1 8B Instruct` @ [Hugging Face](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/)
 - `Llama 3.1 8B` @ [Hugging Face](https://huggingface.co/meta-llama/Llama-3.1-8B/)
 
+<br /><br />
 
-# Setup
+# Setup [COMPULSORY]
 
 See [SETUP.md](SETUP.md) for detailed setup instructions.
 
-# Fine Tuning
+<br /><br />
 
-See [FINETUNE.md](FINETUNE.md) for instructions on executing a finetuning script.
+# Fine Tuning [COMPULSORY]
 
-# Running Inference
+A nice and easy one-liner after you've gone through all the effort of setup :)
 
-See [INFERENCE.md](INFERENCE.md) for detailed instructions on running inference on a finetuned model.
+`(venv) python finetune.py`
+
+> `(venv)` indicates the virtual environment has been activated, see [SETUP.md#virtual-environment](SETUP.md#33-virtual-environment) for a revision on how to do that.
+
+To run *Archived* finetuning scripts, copy them out of the `archived_finetune_scripts` directory and into the root directory and then do the same:
+
+`(venv) python old_finetune.py`
+
+<br /><br />
+
+# Running Inference [Optional]
+
+Another one-liner for running the latest finetuned model *(Note: the finetuning **MUST** be completed first)*
+
+`(venv) python inference.py`
+
+> Note: this inference.py is specific to the latest finetune.py found in root of the project, different finetune scripts cause slightly different parameters and especially in earlier version (0-20) the inference script had to be changed to run each finetuned model.
+>
+> If you are desperate to run these old models, see `archived_inference_scripts` which may contain the needed parameters for loading certain older models.
+>
+> **-- NO SUPPORT FOR OLD MODELS --**
+
+<br /><br />
 
 # License
     CMP3753 Project - Action Tokens in LLM's
