@@ -17,7 +17,7 @@ BASE_OUTPUT_DIR = "./finetuned/63_results_abcd"
 SPECIAL_TOKENS = json.load(open('datasets/abcd/abcd_v1.1_tokens.json', 'r'))
 
 # ========== PHASE CONFIGURATION ==========
-current_phase = 1  # <<< CHANGE THIS
+current_phase = int(input("Enter current phase: "))  # <<< CHANGE THIS
 PHASE_LAYERS = {
     1: list(range(24, 32)),
     2: list(range(16, 24)),

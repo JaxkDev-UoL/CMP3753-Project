@@ -3,7 +3,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import PeftModel, prepare_model_for_kbit_training
 
-MODEL_PATH = "./finetuned/62_results_abcd"
+MODEL_PATH = "./finetuned/26_results"
 BASE_MODEL = "models/Llama-3.1-8B-Instruct"
 
 def load_model():
@@ -41,6 +41,9 @@ def load_model():
 model, tokenizer = load_model()
 model.eval()
 
+def get_model():
+    return BASE_MODEL.split("/")[-1] +"_" + MODEL_PATH.split("/")[-1].split("_")[0]
+
 def generate_response(messages, max_new_tokens=50):
     formatted_prompt = tokenizer.apply_chat_template(
         messages,
@@ -52,8 +55,8 @@ def generate_response(messages, max_new_tokens=50):
     #formatted_prompt += "<|start_header_id|>assistant<|end_header_id|>\n\n"  # Add assistant header for generation
 
     #debugging
-    with open("formatted_prompt.txt", "w") as f:
-        f.write(formatted_prompt)
+    # with open("formatted_prompt.txt", "w") as f:
+    #     f.write(formatted_prompt)
     
     
     inputs = tokenizer(
@@ -88,8 +91,8 @@ def generate_response(messages, max_new_tokens=50):
     # Decode and clean using training patterns
     full_response = tokenizer.decode(outputs[0], skip_special_tokens=False)
 
-    with open("full_response.txt", "w") as f:
-       f.write(full_response)
+    # with open("full_response.txt", "w") as f:
+    #    f.write(full_response)
 
     #print("full_response = ", full_response)
     
