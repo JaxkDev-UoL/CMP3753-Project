@@ -2,7 +2,7 @@ import datetime
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-MODEL_PATH = "./finetuned/65_results_mcv"
+MODEL_PATH = "./finetuned/67_results_abcd"
 BASE_MODEL = "models/Llama-3.1-8B-Instruct"
 
 def load_model():
