@@ -1,0 +1,58 @@
+Model: Llama-3.1-8B-Instruct_67Timestamp: 07-05-2025 13:40:21
+
+
+
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 07-05-2025
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+<<wave>><|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<<wave>>
+<<speak>> What's up for sale?!! my friend! :D
+<<offer>> <item> Iron Boots <price> 10 <currency> Coins
+<<speak>> You're a good soul. Iron Boots for 10 Coins. I'll<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+<<speak>> Those iron boots look good, what about a discount for me, your best friend?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<<offer>> <item> 10 Coins
+<<speak>> I'm not running a charity! Iron Boots is 10 Coins. Take it or leave it. I don't care. Iron Boots is 10 Coins. That's a deal!<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+<<speak>> fine <<give>> <item> 10 Coins<|eot_id|>
+
+
+
+Response: <|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 07-05-2025
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+<<wave>><|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<<wave>>
+<<speak>> What's up for sale?!! my friend! :D
+<<offer>> <item> Iron Boots <price> 10 <currency> Coins
+<<speak>> You're a good soul. Iron Boots for 10 Coins. I'll<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+<<speak>> Those iron boots look good, what about a discount for me, your best friend?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<<offer>> <item> 10 Coins
+<<speak>> I'm not running a charity! Iron Boots is 10 Coins. Take it or leave it. I don't care. Iron Boots is 10 Coins. That's a deal!<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+<<speak>> fine <<give>> <item> 10 Coins<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<<give>> <item> Iron Boots
+<<speak>> You got what you needed. Iron Boots for 10 Coins. Take care, my friend! :D<|eot_id|>
+
+
+
+Special Tokens count: 20
+
+
+
+Output ID's: [128000, 128000, 128006, 9125, 128007, 271, 38766, 1303, 33025, 2696, 25, 6790, 220, 2366, 18, 198, 15724, 2696, 25, 220, 2589, 12, 2304, 12, 2366, 20, 271, 128009, 128006, 882, 128007, 271, 128262, 128009, 128006, 78191, 128007, 271, 128262, 198, 128261, 3639, 596, 709, 369, 6412, 30, 3001, 856, 4333, 0, 551, 35, 198, 128260, 220, 128264, 16979, 46568, 220, 128265, 220, 605, 220, 128263, 62876, 198, 128261, 1472, 2351, 264, 1695, 13836, 13, 16979, 46568, 369, 220, 605, 62876, 13, 358, 3358, 128009, 128006, 882, 128007, 271, 128261, 13266, 11245, 26302, 1427, 1695, 11, 1148, 922, 264, 11336, 369, 757, 11, 701, 1888, 4333, 30, 128009, 128006, 78191, 128007, 271, 128260, 220, 128264, 220, 605, 62876, 198, 128261, 358, 2846, 539, 4401, 264, 23693, 0, 16979, 46568, 374, 220, 605, 62876, 13, 12040, 433, 477, 5387, 433, 13, 358, 1541, 956, 2512, 13, 16979, 46568, 374, 220, 605, 62876, 13, 3011, 596, 264, 3568, 0, 128009, 128006, 882, 128007, 271, 128261, 7060, 220, 128256, 220, 128264, 220, 605, 62876, 128009, 128006, 78191, 128007, 271, 128256, 220, 128264, 16979, 46568, 198, 128261, 1472, 2751, 1148, 499, 4460, 13, 16979, 46568, 369, 220, 605, 62876, 13, 12040, 2512, 11, 856, 4333, 0, 551, 35, 271, 128261, 3639, 596, 279, 3430, 369, 430, 30, 3001, 856, 4333, 0, 551, 35, 198, 128260, 128009]

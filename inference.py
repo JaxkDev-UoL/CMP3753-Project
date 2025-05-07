@@ -5,6 +5,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 MODEL_PATH = "./finetuned/67_results_mcv"
 BASE_MODEL = "models/Llama-3.1-8B-Instruct"
 
+DEBUG_CONVERSATION = True
+
 def load_model():
     # Load tokenizer with special tokens
     tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
@@ -60,17 +62,18 @@ def generate_response(messages, max_new_tokens=50):
     # Decode and clean using training patterns
     full_response = tokenizer.decode(outputs[0], skip_special_tokens=False)
 
-    with open("debug_conversation.txt", "w") as f:
-        f.write("Model: " + get_model())
-        f.write("Timestamp: " + datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S"))
-        f.write("\n\n\n\n")
-        f.write("Prompt: " + formatted_prompt)
-        f.write("\n\n\n\n")
-        f.write("Response: " + full_response)
-        f.write("\n\n\n\n")
-        f.write("Special Tokens count: " + str(sum(map(lambda x: x > 128255, outputs[0].tolist())))) #output id's
-        f.write("\n\n\n\n")
-        f.write("Output ID's: " + str(outputs[0].tolist())) #output id's
+    if DEBUG_CONVERSATION:
+        with open("debug_conversation.txt", "w") as f:
+            f.write("Model: " + get_model())
+            f.write("Timestamp: " + datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S"))
+            f.write("\n\n\n\n")
+            f.write("Prompt: " + formatted_prompt)
+            f.write("\n\n\n\n")
+            f.write("Response: " + full_response)
+            f.write("\n\n\n\n")
+            f.write("Special Tokens count: " + str(sum(map(lambda x: x > 128255, outputs[0].tolist())))) #output id's
+            f.write("\n\n\n\n")
+            f.write("Output ID's: " + str(outputs[0].tolist())) #output id's
 
     
     # Extract only the assistant's response after last <|eot_id|>

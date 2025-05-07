@@ -176,9 +176,9 @@ def run_evaluation(num_runs=100):
     }
 
 if __name__ == "__main__":
-    results = run_evaluation(num_runs=1000)
+    results = run_evaluation(num_runs=200)
     
-    print("Numerical Evaluation Results (100 Random Samples):\n")
+    print("Numerical Evaluation Results (200 Random Samples):\n")
     print(f"Token Precision: {results['token_level']['precision']:.2%}")
     print(f"Token Recall: {results['token_level']['recall']:.2%}")
     print(f"Token F1: {results['token_level']['f1']:.2%}\n")
