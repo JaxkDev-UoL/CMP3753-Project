@@ -8,11 +8,14 @@ bitsandbytes==0.45.5
 certifi==2024.12.14
 charset-normalizer==3.4.1
 colorama==0.4.6
+contourpy==1.3.2
+cycler==0.12.1
 datasets==3.3.1
 dill==0.3.8
 fairscale==0.4.13
 filelock==3.17.0
 fire==0.7.0
+fonttools==4.57.0
 frozenlist==1.5.0
 fsspec==2024.12.0
 grpcio==1.70.0
@@ -20,8 +23,10 @@ huggingface-hub==0.27.1
 idna==3.10
 Jinja2==3.1.5
 joblib==1.4.2
+kiwisolver==1.4.8
 Markdown==3.7
 MarkupSafe==3.0.2
+matplotlib==3.10.1
 mpmath==1.3.0
 multidict==6.1.0
 multiprocess==0.70.16
@@ -35,6 +40,7 @@ propcache==0.2.1
 protobuf==5.29.3
 psutil==6.1.1
 pyarrow==19.0.0
+pyparsing==3.2.3
 python-dateutil==2.9.0.post0
 pytz==2025.1
 PyYAML==6.0.2
