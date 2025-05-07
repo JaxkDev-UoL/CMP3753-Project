@@ -50,7 +50,9 @@ plt.figure(figsize=(12, 6))
 # Plot training loss
 plt.plot(train_steps, train_losses, 
          label='Training Loss', 
-         color='darkorange', 
+         color='darkorange',
+         marker='o',
+         markersize=3,
          linewidth=2,
          alpha=0.8)
 
@@ -58,8 +60,8 @@ plt.plot(train_steps, train_losses,
 plt.plot(eval_steps, eval_losses, 
          label='Evaluation Loss', 
          color='royalblue', 
-         #marker='o',
-         #markersize=8,
+         marker='o',
+         markersize=3,
          linewidth=2,
          alpha=0.6)
 
@@ -96,5 +98,7 @@ plt.gca().set_facecolor('#f5f5f5')
 
 # Save and show
 plt.tight_layout()
-plt.savefig('training_graph_'+model_id+'.png', dpi=300)
+if not os.path.exists('graphs'):
+    os.makedirs('graphs')
+plt.savefig('graphs/training_graph_'+model_id+'.png', dpi=300)
 plt.show()
