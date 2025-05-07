@@ -116,15 +116,11 @@ if __name__ == "__main__":
 
         for name, split in splits.items():
             format_and_save(name, split)
-        print("Created and saved dataset splits")
-        train_dataset = splits['train']
-        eval_dataset = splits['val']
-        test_dataset = splits['test']
-    else:
-        train_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/train")
-        eval_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/val")
-        test_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/test")
-        print("Loaded existing dataset splits")
+
+    train_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/train")
+    eval_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/val")
+    test_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/test")
+    print("Loaded existing dataset splits")
 
     data_collator = DataCollatorForLanguageModeling(tokenizer, mlm=False)
 
@@ -136,7 +132,7 @@ if __name__ == "__main__":
         per_device_eval_batch_size=4,
         gradient_accumulation_steps=4,
         eval_strategy="steps",
-        eval_steps=25,  # Evaluate every 10 steps
+        eval_steps=25,
         logging_steps=5,
         save_steps=100,
         learning_rate=5e-5,

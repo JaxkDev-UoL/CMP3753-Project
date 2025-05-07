@@ -87,9 +87,9 @@ if __name__ == "__main__":
     #     {"role": "user", "content": "<<speak>> Good, What you got for me today?"}
     # ]
 
-    print("=== Welcome to the Llama-3.1-8B-Instruct inference ===")
+    print("\n\n=== Welcome to the Llama-3.1-8B-Instruct inference ===")
     print("=== Type 'exit' to quit ===")
-    print("=== Type 'clear' or 'reset' to clear conversation history ===")
+    print("=== Type 'clear' or 'reset' to clear conversation history ===\n\n")
 
 
     while prompt.lower() != "exit":
@@ -109,6 +109,8 @@ if __name__ == "__main__":
         response = generate_response(messages)
         messages.append({"role": "assistant", "content": response})
         print(f"\n\nAssistant: {response}\n")
-        print("===" * 20)
-        print(messages)
-        print("===" * 20)
+
+        # Debugging: print the entire conversation history
+        # print("===" * 20)
+        # print(messages)
+        # print("===" * 20)

@@ -12,9 +12,9 @@ from transformers import (
 
 # Configuration
 MODEL_PATH = "models/Llama-3.1-8B-Instruct"
-DATASET_PATH = "datasets/abcd/abcd_v1.1_processed.jsonl"
-BASE_OUTPUT_DIR = "./finetuned/67_results_abcd"
-SPECIAL_TOKENS = json.load(open('datasets/abcd/abcd_v1.1_tokens.json', 'r'))
+DATASET_PATH = "datasets/mcv/1k_minecraft_villager_dataset_formatted_6-llama.jsonl"
+BASE_OUTPUT_DIR = "./finetuned/67_results_mcv"
+SPECIAL_TOKENS = json.load(open('datasets/mcv/1k_minecraft_villager_dataset_tokens_6-llama.json', 'r'))
 
 def load_conversations(path: str) -> Dataset:
     conversations = []
@@ -37,7 +37,7 @@ def format_conversation(examples, tokenizer):
         all_texts,
         padding=False,
         truncation=True,
-        max_length=4096,
+        max_length=1024,
         return_tensors=None,
         add_special_tokens=True
     )
@@ -116,11 +116,12 @@ if __name__ == "__main__":
 
         for name, split in splits.items():
             format_and_save(name, split)
-
+        print("Created and saved dataset splits")
+    
     train_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/train")
     eval_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/val")
     test_dataset = Dataset.load_from_disk(f"{BASE_OUTPUT_DIR}/test")
-    print("Loaded existing dataset splits")
+    print("Loaded dataset splits")
 
     data_collator = DataCollatorForLanguageModeling(tokenizer, mlm=False)
 
@@ -130,10 +131,10 @@ if __name__ == "__main__":
         num_train_epochs=1,
         per_device_train_batch_size=4,
         per_device_eval_batch_size=4,
-        gradient_accumulation_steps=4,
+        gradient_accumulation_steps=2,
         eval_strategy="steps",
-        eval_steps=25,
-        logging_steps=5,
+        eval_steps=5,
+        logging_steps=2,
         save_steps=100,
         learning_rate=5e-5,
         weight_decay=0.1,
@@ -157,7 +158,7 @@ if __name__ == "__main__":
         eval_dataset=eval_dataset,
         data_collator=data_collator,
     )
-    trainer.train(resume_from_checkpoint=True)
+    trainer.train()
     
     # Final evaluation on test set
     test_results = trainer.evaluate(test_dataset)

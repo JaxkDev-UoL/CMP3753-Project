@@ -24,9 +24,11 @@ See [SETUP.md](SETUP.md) for detailed setup instructions.
 
 # Fine Tuning [COMPULSORY]
 
-A nice and easy one-liner after you've gone through all the effort of setup :)
+A nice and easy one-liner for each dataset after you've gone through all the effort of setup :)
 
-`(venv) python finetune.py`
+`(venv) python finetune_ABCD.py`
+
+`(venv) python finetune_MCV.py`
 
 > `(venv)` indicates the virtual environment has been activated, see [SETUP.md#virtual-environment](SETUP.md#33-virtual-environment) for a revision on how to do that.
 
@@ -41,6 +43,8 @@ To run *Archived* finetuning scripts, copy them out of the `archived_finetune_sc
 Another one-liner for running the latest finetuned model *(Note: the finetuning **MUST** be completed first)*
 
 `(venv) python inference.py`
+
+> To change model used, see Line #5: `MODEL_PATH = "./finetuned/67_results_abcd"`
 
 > Note: this inference.py is specific to the latest finetune.py found in root of the project, different finetune scripts cause slightly different parameters and especially in earlier version (0-20) the inference script had to be changed to run each finetuned model.
 >
