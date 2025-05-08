@@ -1,0 +1,22 @@
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 18.36it/s]
+Evaluating: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [09:26<00:00,  2.83s/it]
+Numerical Evaluation Results (200 Random Samples):
+
+Token Precision: 65.88%
+Token Recall: 90.70%
+Token F1: 76.32%
+
+Full Pattern Match Rate: 100.00%
+Partial Match Rate: 100.00%
+
+Error Analysis:
+Most Missing Token: <<give>>
+Most Extra Token: <currency>
+
+Error Distribution:
+Missing: {'<<give>>': 47, '<item>': 36}
+Extra: {'<|end_header_id|>': 41, '<<offer>>': 88, '<item>': 74, '<price>': 73, '<currency>': 93, '<<give>>': 25, '<<grumble>>': 25}
+
+Pattern Effectiveness:
+Best Pattern: 0
+Distribution: {0: 200}

@@ -170,3 +170,4 @@ models/*
 *_venv/*
 
 full_response.txt
+debug_conversation.txt
